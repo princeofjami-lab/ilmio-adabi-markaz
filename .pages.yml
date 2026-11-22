@@ -1,0 +1,131 @@
+
+media:
+  - name: images
+    label: تصاویر
+    input: media/images
+    output: /media/images
+    categories:
+      - image
+
+  - name: documents
+    label: PDF اور دستاویزات
+    input: media/documents
+    output: /media/documents
+    categories:
+      - document
+
+content:
+  - name: articles
+    label: مقالات و مضامین
+    type: collection
+    path: content/articles
+    format: yaml-frontmatter
+    fields:
+      - name: title
+        label: عنوان
+        type: string
+        required: true
+      - name: author
+        label: مصنف
+        type: string
+      - name: date
+        label: تاریخ
+        type: date
+      - name: summary
+        label: خلاصہ
+        type: text
+      - name: body
+        label: مکمل مضمون
+        type: rich-text
+
+  - name: research
+    label: تحقیق و تحقیقات
+    type: collection
+    path: content/research
+    format: yaml-frontmatter
+    fields:
+      - name: title
+        label: عنوان
+        type: string
+        required: true
+      - name: author
+        label: محقق
+        type: string
+      - name: date
+        label: تاریخ
+        type: date
+      - name: summary
+        label: خلاصہ
+        type: text
+      - name: body
+        label: تحقیقی مواد
+        type: rich-text
+
+  - name: fatwas
+    label: فتاویٰ
+    type: collection
+    path: content/fatawa
+    format: yaml-frontmatter
+    fields:
+      - name: title
+        label: سوال کا عنوان
+        type: string
+        required: true
+      - name: question
+        label: سوال
+        type: text
+      - name: answer
+        label: جواب
+        type: rich-text
+      - name: date
+        label: تاریخ
+        type: date
+
+  - name: publications
+    label: جامی نشریات
+    type: collection
+    path: content/publications
+    format: yaml-frontmatter
+    fields:
+      - name: title
+        label: کتاب یا نشریہ کا نام
+        type: string
+        required: true
+      - name: author
+        label: مصنف
+        type: string
+      - name: description
+        label: تعارف
+        type: text
+      - name: pdf
+        label: PDF فائل
+        type: file
+        options:
+          media: documents
+          extensions:
+            - pdf
+
+  - name: library
+    label: کتب خانہ
+    type: collection
+    path: content/library
+    format: yaml-frontmatter
+    fields:
+      - name: title
+        label: کتاب کا نام
+        type: string
+        required: true
+      - name: author
+        label: مصنف
+        type: string
+      - name: description
+        label: کتاب کا تعارف
+        type: text
+      - name: pdf
+        label: PDF کتاب
+        type: file
+        options:
+          media: documents
+          extensions:
+            - pdf
+            
